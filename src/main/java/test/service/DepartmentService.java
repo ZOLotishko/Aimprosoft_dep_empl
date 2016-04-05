@@ -9,5 +9,9 @@ import java.util.List;
  */
 public interface DepartmentService {
 
-    List<Department> findAll();
+    void create(Department department);
+    Department read(int id);
+    void update(Department department);
+    void delete(int id);
+    List<Department> getAll();
 }

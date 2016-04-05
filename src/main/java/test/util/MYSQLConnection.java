@@ -5,13 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Created by user on 04.04.16.
+ * Created on 04.04.16.
  */
 public class MYSQLConnection  {
 
     private static final String USER = "root";
     private static final String PASSWORD = "1";
-    private static final String URL = "jdbc:mysql://localhost:3306/???" ;
+    private static final String URL = "jdbc:mysql://localhost:3306/company" ;
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     public static Connection getConnection(){
