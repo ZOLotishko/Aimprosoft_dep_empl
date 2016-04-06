@@ -7,12 +7,12 @@ import java.util.Date;
  */
 public class Employee {
 
-    private int id;
+    private Integer id;
     private String name;
     private String email;
-    private double salary;
+    private Double salary;
     private Date date;
-    private int department_id;
+    private Integer department_id;
 
     public Employee(){
         super();

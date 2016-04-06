@@ -10,7 +10,10 @@ import java.util.List;
 public interface DepartmentDAO {
 
     Department readDepartmentByID(int id);
+
+    @test.dao.support.Connection
     List<Department> readDepartments();
+
     void createDepartment(Department department);
     void updateDepartment(Department department);
     void deleteDepartment(int id);

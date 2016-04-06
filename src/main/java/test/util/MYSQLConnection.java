@@ -7,12 +7,14 @@ import java.sql.SQLException;
 /**
  * Created on 04.04.16.
  */
-public class MYSQLConnection  {
+public class MYSQLConnection {
 
     private static final String USER = "root";
     private static final String PASSWORD = "1";
     private static final String URL = "jdbc:mysql://localhost:3306/company" ;
     private static final String DRIVER = "com.mysql.jdbc.Driver";
+
+    private static final ThreadLocal<Connection> CONNECTION_THREAD_LOCAL = new ThreadLocal<>();
 
     public static Connection getConnection(){
 
@@ -42,5 +44,13 @@ public class MYSQLConnection  {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void putCurrentConnection(Connection connection) {
+        CONNECTION_THREAD_LOCAL.set(connection);
+    }
+
+    public static Connection getCurrentConnection() {
+        return CONNECTION_THREAD_LOCAL.get();
     }
 }

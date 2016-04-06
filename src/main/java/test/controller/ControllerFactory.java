@@ -15,7 +15,8 @@ public class ControllerFactory {
 
     {
         controllerMap.put("/", defaultController);
-
+        controllerMap.put("/deleteDepartment", new DeleteDepartmnetsController());
+        controllerMap.put("/addDepartment", new AddDepartmnetsController());
 
     }
 

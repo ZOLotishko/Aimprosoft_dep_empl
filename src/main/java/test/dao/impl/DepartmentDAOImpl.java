@@ -31,11 +31,18 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return department;
     }
 
     public List<Department> readDepartments() {
-        Connection connection = MYSQLConnection.getConnection();
+        Connection connection = MYSQLConnection.getCurrentConnection();
         String sql = "SELECT id, name FROM department ";
         List<Department> departments = new ArrayList<Department>();
         ResultSet resultSet = null;
@@ -55,6 +62,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return departments;
     }
 
