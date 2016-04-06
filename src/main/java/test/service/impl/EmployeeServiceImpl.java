@@ -19,7 +19,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
-    public Employee read(int id) {
+    public Employee read(Integer id) {
         return employeeDAO.readEmployeeByID(id);
     }
 
@@ -29,7 +29,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         employeeDAO.deleteEmployee(id);
     }
 
@@ -39,7 +39,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
-    public List<Employee> getAllEmployeesInDepartment(int id) {
+    public List<Employee> getAllEmployeesInDepartment(Integer id) {
         return employeeDAO.readEmployeeByIDDepartment(id);
     }
 }

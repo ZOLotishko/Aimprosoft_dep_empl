@@ -10,8 +10,8 @@ import java.util.List;
 public interface DepartmentService {
 
     void create(Department department);
-    Department read(int id);
+    Department read(Integer id);
     void update(Department department);
-    void delete(int id);
+    void delete(Integer id);
     List<Department> getAll();
 }

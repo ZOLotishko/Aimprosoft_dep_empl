@@ -1,5 +1,6 @@
-package test.controller;
+package test.controller.empl;
 
+import test.controller.InternalController;
 import test.dao.impl.DepartmentDAOImpl;
 import test.service.impl.DepartmentServiceImpl;
 

@@ -9,12 +9,18 @@ import java.util.List;
  */
 public interface DepartmentDAO {
 
-    Department readDepartmentByID(int id);
+    @test.dao.support.Connection
+    Department readDepartmentByID(Integer id);
 
     @test.dao.support.Connection
     List<Department> readDepartments();
 
+    @test.dao.support.Connection
     void createDepartment(Department department);
+
+    @test.dao.support.Connection
     void updateDepartment(Department department);
-    void deleteDepartment(int id);
+
+    @test.dao.support.Connection
+    void deleteDepartment(Integer id);
 }

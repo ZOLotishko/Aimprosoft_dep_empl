@@ -1,5 +1,6 @@
-package test.controller;
+package test.controller.empl;
 
+import test.controller.InternalController;
 import test.dao.impl.DepartmentDAOImpl;
 import test.entity.Department;
 
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created on 04.04.16.
  */
-public class ShowAllDepartmnetsController implements InternalController{
+public class ShowAllDepartmnetsController implements InternalController {
 
     @Override
     public void executor(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException{

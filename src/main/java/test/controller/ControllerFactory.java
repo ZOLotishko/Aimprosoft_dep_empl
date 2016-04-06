@@ -1,5 +1,8 @@
 package test.controller;
 
+import test.controller.empl.DeleteDepartmnetsController;
+import test.controller.empl.ShowAllDepartmnetsController;
+
 import java.util.HashMap;
 import java.util.Map;
 

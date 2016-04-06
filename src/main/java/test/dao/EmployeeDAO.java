@@ -9,10 +9,21 @@ import java.util.List;
  */
 public interface EmployeeDAO {
 
-    Employee readEmployeeByID(int id );
+    @test.dao.support.Connection
+    Employee readEmployeeByID(Integer id );
+
+    @test.dao.support.Connection
     List<Employee> readEmployees();
+
+    @test.dao.support.Connection
     void createEmployee(Employee employee);
+
+    @test.dao.support.Connection
     void updateEmployee(Employee employee);
-    void deleteEmployee(int id);
-    List<Employee> readEmployeeByIDDepartment(int id);
+
+    @test.dao.support.Connection
+    void deleteEmployee(Integer id);
+
+    @test.dao.support.Connection
+    List<Employee> readEmployeeByIDDepartment(Integer id);
 }

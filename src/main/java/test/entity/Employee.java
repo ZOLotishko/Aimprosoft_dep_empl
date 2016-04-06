@@ -18,20 +18,27 @@ public class Employee {
         super();
     }
 
-    public Employee(String name, String email, double salary, Date date, int department_id){
+
+    public Employee(String name, String email,Date date, double salary,  Integer id){
         this.name = name;
         this.email = email;
         this.salary = salary;
         this.date = date;
-        this.department_id = department_id;
+        this.id = id;
     }
 
+    public Employee(String name, String email,Date date, Double salary ) {
+        this.name = name;
+        this.email = email;
+        this.salary = salary;
+        this.date = date;
+    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,11 +58,11 @@ public class Employee {
         this.email = email;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -67,11 +74,11 @@ public class Employee {
         this.date = date;
     }
 
-    public int getDepartment_id() {
+    public Integer getDepartment_id() {
         return department_id;
     }
 
-    public void setDepartment_id(int department_id) {
+    public void setDepartment_id(Integer department_id) {
         this.department_id = department_id;
     }
 
@@ -85,33 +92,5 @@ public class Employee {
                 ", date=" + date +
                 ", department_id=" + department_id +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Employee employee = (Employee) o;
-
-        if (id != employee.id) return false;
-        if (Double.compare(employee.salary, salary) != 0) return false;
-        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
-        if (email != null ? !email.equals(employee.email) : employee.email != null) return false;
-        return date != null ? date.equals(employee.date) : employee.date == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        temp = Double.doubleToLongBits(salary);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
     }
 }

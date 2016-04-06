@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    public Employee readEmployeeByID(int id) {
+    public Employee readEmployeeByID(Integer id) {
 
         Connection connection = MYSQLConnection.getConnection();
         String sql = "SELECT * FROM employee WHERE id = ?";
@@ -97,14 +97,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public void updateEmployee(Employee employee) {
 
         Connection connection = MYSQLConnection.getConnection();
-        String sql = "UPDATE employee SET name = ?, email = ?, date = ?, salary = ?,  WHERE employees_id = ?";
+        String sql = "UPDATE employee SET name = ?, email = ?, date = ?, salary = ?  WHERE id = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
 
             preparedStatement.setString(1, employee.getName());
             preparedStatement.setString(2, employee.getEmail());
             preparedStatement.setDate(3, new java.sql.Date(employee.getDate().getTime()));
             preparedStatement.setDouble(4, employee.getSalary());
-            preparedStatement.executeQuery();
+            preparedStatement.setInt(5, employee.getId());
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -112,7 +113,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     }
 
-    public void deleteEmployee(int id) {
+    public void deleteEmployee(Integer id) {
 
         Connection connection = MYSQLConnection.getConnection();
         String sql = "DELETE FROM employee WHERE id = ?";
@@ -127,11 +128,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     }
 
-    public List<Employee> readEmployeeByIDDepartment(int id) {
+    public List<Employee> readEmployeeByIDDepartment(Integer id) {
 
         Connection connection = MYSQLConnection.getConnection();
         String sql = "SELECT * From employee WHERE department_id = ?";
-        ResultSet resultSet = null;
+        ResultSet resultSet ;
         List<Employee> employees = new ArrayList<Employee>();
 
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){

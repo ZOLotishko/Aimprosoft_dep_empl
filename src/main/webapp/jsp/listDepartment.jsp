@@ -34,6 +34,6 @@
     </c:forEach>
     </tbody>
 </table>
-<input type=button onClick="location.href='/addDepartment'" value='Add Department'>
+<input type=button onClick="location.href='/addDepartment'" value='Add Departments'>
 </body>
 </html>

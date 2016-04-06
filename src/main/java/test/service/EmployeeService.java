@@ -10,10 +10,10 @@ import java.util.List;
 public interface EmployeeService {
 
     void create(Employee employee);
-    Employee read(int id);
+    Employee read(Integer id);
     void update(Employee employee);
-    void delete(int id);
+    void delete(Integer id);
     List<Employee> getAll();
-    List<Employee> getAllEmployeesInDepartment(int id);
+    List<Employee> getAllEmployeesInDepartment(Integer id);
 
 }

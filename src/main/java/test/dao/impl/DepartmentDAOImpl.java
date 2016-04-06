@@ -15,11 +15,11 @@ import java.util.List;
  * Created on 04.04.16.
  */
 public class DepartmentDAOImpl implements DepartmentDAO {
-    public Department readDepartmentByID(int id) {
+    public Department readDepartmentByID(Integer id) {
 
         Connection connection = MYSQLConnection.getConnection();
         String sql = "SELECT id, name FROM department WHERE id = ?";
-        ResultSet resultSet = null;
+        ResultSet resultSet ;
         Department department = new Department();
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setInt(1, id);
@@ -31,21 +31,15 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+
         return department;
     }
 
     public List<Department> readDepartments() {
         Connection connection = MYSQLConnection.getCurrentConnection();
         String sql = "SELECT id, name FROM department ";
-        List<Department> departments = new ArrayList<Department>();
-        ResultSet resultSet = null;
+        List<Department> departments = new ArrayList<>();
+        ResultSet resultSet;
 
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             resultSet = preparedStatement.executeQuery();
@@ -62,7 +56,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return departments;
     }
 
@@ -94,7 +87,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         }
     }
 
-    public void deleteDepartment(int id) {
+    public void deleteDepartment(Integer id) {
 
         Connection connection = MYSQLConnection.getConnection();
         String sql ="DELETE FROM department WHERE id = ? ";
@@ -107,5 +100,27 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             e.printStackTrace();
         }
 
+    }
+
+    public Department checkName( String name)  {
+        Connection connection = MYSQLConnection.getConnection();
+        Department department = new Department();
+
+        String sql = "SELECT * FROM departments WHERE name = ? ";
+        ResultSet resultSet ;
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setString(1, name);
+            resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                department.setId(resultSet.getInt("id"));
+                department.setName(resultSet.getString("name"));
+            }
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return department;
     }
 }
