@@ -36,7 +36,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
     }
 
     public List<Department> readDepartments() {
-        Connection connection = MYSQLConnection.getCurrentConnection();
+        Connection connection = MYSQLConnection.getConnection();
         String sql = "SELECT id, name FROM department ";
         List<Department> departments = new ArrayList<>();
         ResultSet resultSet;
@@ -65,6 +65,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         String sql = "INSERT into department ( name) VALUES (?)";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setString(1, department.getName());
+
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

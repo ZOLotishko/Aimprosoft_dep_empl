@@ -4,7 +4,6 @@ import test.dao.impl.DepartmentDAOImpl;
 import test.dao.impl.EmployeeDAOImpl;
 import test.dao.support.ConnectionInvocationHandler;
 
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
 /**

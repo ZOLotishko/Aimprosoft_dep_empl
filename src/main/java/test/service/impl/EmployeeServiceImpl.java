@@ -1,5 +1,6 @@
 package test.service.impl;
 
+import test.dao.DaoFactory;
 import test.dao.EmployeeDAO;
 import test.dao.impl.EmployeeDAOImpl;
 import test.entity.Employee;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class EmployeeServiceImpl  implements EmployeeService{
 
-    EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+    private EmployeeDAO employeeDAO = DaoFactory.getEmployeeDAO();
     @Override
     public void create(Employee employee) {
         employeeDAO.createEmployee(employee);

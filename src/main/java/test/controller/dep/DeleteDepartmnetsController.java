@@ -1,4 +1,4 @@
-package test.controller.empl;
+package test.controller.dep;
 
 import test.controller.InternalController;
 import test.dao.impl.DepartmentDAOImpl;

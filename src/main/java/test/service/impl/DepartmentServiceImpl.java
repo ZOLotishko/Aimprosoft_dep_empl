@@ -18,14 +18,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 
     @Override
     public void create(Department department) {
-
-        DepartmentValidate departmentValidate = new DepartmentValidate(department);
-        departmentValidate.validate();
-        if(!departmentValidate.getMessagesMap().isEmpty()){
-            departmentDAO.createDepartment(department);
-        }
-
-
+        departmentDAO.createDepartment(department);
     }
 
     @Override

@@ -1,7 +1,12 @@
 package test.controller;
 
-import test.controller.empl.DeleteDepartmnetsController;
-import test.controller.empl.ShowAllDepartmnetsController;
+import test.controller.dep.AddDepartmnetsController;
+import test.controller.dep.DeleteDepartmnetsController;
+import test.controller.dep.ShowAddListController;
+import test.controller.dep.ShowAllDepartmnetsController;
+import test.controller.empl.AddEmployeeController;
+import test.controller.empl.ShowEmployeeAddListController;
+import test.controller.empl.ShowListEmployeeController;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +24,11 @@ public class ControllerFactory {
     {
         controllerMap.put("/", defaultController);
         controllerMap.put("/deleteDepartment", new DeleteDepartmnetsController());
-        controllerMap.put("/addDepartment", new AddDepartmnetsController());
+        controllerMap.put("/showAddList", new AddDepartmnetsController());
+        controllerMap.put("/addDepartments", new ShowAddListController());
+        controllerMap.put("/listEmployee", new ShowListEmployeeController());
+        controllerMap.put("/addEmployee", new ShowEmployeeAddListController());
+        controllerMap.put("/addEmployees", new AddEmployeeController());
 
     }
 

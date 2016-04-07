@@ -19,12 +19,12 @@ public class Employee {
     }
 
 
-    public Employee(String name, String email,Date date, double salary,  Integer id){
+    public Employee(String name, String email,Date date, double salary,  Integer department_id){
         this.name = name;
         this.email = email;
         this.salary = salary;
         this.date = date;
-        this.id = id;
+        this.department_id = department_id;
     }
 
     public Employee(String name, String email,Date date, Double salary ) {
