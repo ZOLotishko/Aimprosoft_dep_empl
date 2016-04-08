@@ -20,7 +20,7 @@ public class ShowListEmployeeController implements InternalController {
     @Override
     public void executor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String id = request.getParameter("id");
+        String id = request.getParameter("department_id");
         if(id!=null){
             Integer depId = Integer.valueOf(id);
             List<Employee> employees = employeeService.getAllEmployeesInDepartment(depId);

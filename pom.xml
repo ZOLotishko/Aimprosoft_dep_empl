@@ -54,7 +54,17 @@
             <artifactId>batik-css</artifactId>
             <version>1.7</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.sf.oval</groupId>
+            <artifactId>oval</artifactId>
+            <version>1.85</version>
+        </dependency>
+
+
     </dependencies>
+
+
 
     <build>
         <finalName>test</finalName>

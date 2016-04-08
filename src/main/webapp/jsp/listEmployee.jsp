@@ -30,13 +30,13 @@
             <td><c:out value="${emp.email}" /></td>
             <td><c:out value="${emp.date}" /></td>
             <td><c:out value="${emp.salary}"></c:out>
-            <td><c:out value="${emp.department_id}" /></td>
+            <td><c:out value="${department_id}" /></td>
             <td>
                 <form method="POST" action="/deleteEmployee">
-                    <input type="submit" name="deleteForm" value="Delete Employee"> <input type="hidden" name="delete" value="${emp.employees_id}">
+                    <input type="submit" name="deleteForm" value="Delete Employee"> <input type="hidden" name="delete" value="${emp.id}">
                 </form>
             </td>
-            <td><input type=button onClick="location.href='/updateEmployee?employees_id=<c:out value="${emp.employees_id}" />'" value='Update'></td>
+            <td><input type=button onClick="location.href='/addEmployee?employees_id=<c:out value="${emp.id}" />'" value='Update'></td>
         </tr>
     </c:forEach>
     </tbody>

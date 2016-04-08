@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td><input type="text" name="name" id="name" value="<c:out value="${department.name}" />" />
-                    <span class="error"><c:out value="${error.name}" /></span></td>
+                <span class="error" style="color: crimson">${error.get("name")}</span></td>
             </tr>
 
         </table>
