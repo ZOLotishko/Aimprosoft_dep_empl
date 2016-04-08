@@ -8,7 +8,7 @@
 <body>
 <center>
     <form method="POST" action="showAddList">
-        <h2> Department</h2>
+        <h2> <c:out value="${aaa}"/> Department</h2>
         <table>
             <tr>
                 <td><input type="text" readonly name="id" id="id" value="<c:out value="${department.id}" />" /></td>

@@ -18,7 +18,19 @@ public class ShowAddListController implements InternalController {
     @Override
     public void executor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
         String id = request.getParameter("id");
+
+        if (id == null){
+
+
+            request.setAttribute("aaa", "create");
+
+        }else {
+
+            request.setAttribute("aaa", "update");
+
+        }
         if(id!=null){
             Department department = departmentService.read(Integer.valueOf(id));
             if(department!=null){
